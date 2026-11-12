@@ -256,7 +256,7 @@ Invoke-RestMethod -Method Post -Uri http://127.0.0.1:8000/api/clientes/ -Headers
 ```
 
 ```bash
-# curl
+# curl  Linux/macOS (bash):
 curl -X POST http://127.0.0.1:8000/api/auth/token/ -H "Content-Type: application/json" \
      -d '{"username":"admin","password":"SUA_SENHA"}'
 curl -H "Authorization: Token <token>" http://127.0.0.1:8000/api/clientes/
