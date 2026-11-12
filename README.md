@@ -297,3 +297,11 @@ docs/              MER + DER, documentação técnica do ETL, relatório de trad
   (inclui `drf-spectacular-sidecar`), reinicie o servidor e use `Ctrl+F5` no navegador. A alternativa é `/api/swagger/`.
 - **`No module named ...`:** o ambiente virtual não está ativo ou os pacotes não foram instalados.
 - **`manage.py` não encontrado:** execute os comandos dentro da pasta do projeto.
+  ```
+
+  👥 Autoria
+Autores: Aleandreson, Hallison, Bruno Miranda e Cecília
+Projeto: Desafio Primora
+Área: Desenvolvimento de Software BackEnd - Python com Django
+Instituição:Instituto Federal de Brasília (IFB)
+  
