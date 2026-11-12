@@ -299,9 +299,9 @@ docs/              MER + DER, documentação técnica do ETL, relatório de trad
 - **`manage.py` não encontrado:** execute os comandos dentro da pasta do projeto.
   
 
-👥 Autoria
-Autores: Aleandreson, Hallison, Bruno Miranda e Cecília
-Projeto: Desafio Primora
-Área: Desenvolvimento de Software BackEnd - Python com Django
-Instituição:Instituto Federal de Brasília (IFB)
+## 👥 Autoria
+- Autores: Aleandreson, Hallison, Bruno Miranda e Cecília
+- Projeto: Desafio Primora
+- Área: Desenvolvimento de Software BackEnd - Python com Django
+- Instituição:Instituto Federal de Brasília (IFB)
   
