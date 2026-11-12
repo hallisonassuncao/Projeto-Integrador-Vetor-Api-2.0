@@ -1,0 +1,658 @@
+openapi: 3.0.3
+info:
+  title: API Distribuidora Vetor
+  version: 1.0.0
+  description: 'Consulta pública (GET) e operações restritas a usuários autenticados
+    (POST, PUT, PATCH, DELETE) sobre os clientes e vendedores da Distribuidora Vetor,
+    após o ETL de normalização. Autenticação: obtenha um token em POST /api/auth/token/
+    e envie o cabeçalho ''Authorization: Token SEU_TOKEN''.'
+paths:
+  /api/auth/token/:
+    post:
+      operationId: auth_token_create
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AuthToken'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AuthToken'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthToken'
+        required: true
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthToken'
+          description: ''
+  /api/clientes/:
+    get:
+      operationId: clientes_list
+      summary: Listar clientes
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: Um número de página dentro do conjunto de resultados paginado.
+        schema:
+          type: integer
+      tags:
+      - clientes
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedClienteList'
+          description: ''
+    post:
+      operationId: clientes_create
+      summary: Criar cliente (autenticado)
+      tags:
+      - clientes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Cliente'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Cliente'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Cliente'
+        required: true
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cliente'
+          description: ''
+  /api/clientes/{id_cliente}/:
+    get:
+      operationId: clientes_retrieve
+      summary: Detalhar cliente
+      parameters:
+      - in: path
+        name: id_cliente
+        schema:
+          type: string
+        description: Um valor único que identifica este cliente.
+        required: true
+      tags:
+      - clientes
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cliente'
+          description: ''
+    put:
+      operationId: clientes_update
+      summary: Substituir cliente (autenticado)
+      parameters:
+      - in: path
+        name: id_cliente
+        schema:
+          type: string
+        description: Um valor único que identifica este cliente.
+        required: true
+      tags:
+      - clientes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Cliente'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Cliente'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Cliente'
+        required: true
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cliente'
+          description: ''
+    patch:
+      operationId: clientes_partial_update
+      summary: Editar cliente (autenticado)
+      parameters:
+      - in: path
+        name: id_cliente
+        schema:
+          type: string
+        description: Um valor único que identifica este cliente.
+        required: true
+      tags:
+      - clientes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedCliente'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedCliente'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedCliente'
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cliente'
+          description: ''
+    delete:
+      operationId: clientes_destroy
+      summary: Excluir cliente (autenticado)
+      parameters:
+      - in: path
+        name: id_cliente
+        schema:
+          type: string
+        description: Um valor único que identifica este cliente.
+        required: true
+      tags:
+      - clientes
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/clientes/bairro/{nome}/:
+    get:
+      operationId: clientes_bairro_list
+      summary: Listar clientes de um bairro
+      parameters:
+      - in: path
+        name: nome
+        schema:
+          type: string
+        description: 'Bairro normalizado. Aceita variações de grafia (ex.: ''aguas
+          claras'').'
+        required: true
+      - name: page
+        required: false
+        in: query
+        description: Um número de página dentro do conjunto de resultados paginado.
+        schema:
+          type: integer
+      tags:
+      - clientes
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedClienteList'
+          description: ''
+  /api/clientes/bairros/:
+    get:
+      operationId: clientes_bairros_list
+      summary: 'Resumo: total de clientes por bairro normalizado'
+      tags:
+      - clientes
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BairroResumo'
+          description: ''
+  /api/clientes/vendedor/{vendedor_id}/:
+    get:
+      operationId: clientes_vendedor_list
+      summary: Listar clientes de um vendedor
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: Um número de página dentro do conjunto de resultados paginado.
+        schema:
+          type: integer
+      - in: path
+        name: vendedor_id
+        schema:
+          type: integer
+        description: id_vendedor
+        required: true
+      tags:
+      - clientes
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedClienteList'
+          description: ''
+  /api/vendedores/:
+    get:
+      operationId: vendedores_list
+      summary: Listar vendedores
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: Um número de página dentro do conjunto de resultados paginado.
+        schema:
+          type: integer
+      tags:
+      - vendedores
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedVendedorList'
+          description: ''
+    post:
+      operationId: vendedores_create
+      summary: Criar vendedor (autenticado)
+      tags:
+      - vendedores
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Vendedor'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Vendedor'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Vendedor'
+        required: true
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Vendedor'
+          description: ''
+  /api/vendedores/{id_vendedor}/:
+    get:
+      operationId: vendedores_retrieve
+      summary: Detalhar vendedor
+      parameters:
+      - in: path
+        name: id_vendedor
+        schema:
+          type: integer
+        description: Um valor inteiro único que identifica este vendedor.
+        required: true
+      tags:
+      - vendedores
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Vendedor'
+          description: ''
+    put:
+      operationId: vendedores_update
+      summary: Substituir vendedor (autenticado)
+      parameters:
+      - in: path
+        name: id_vendedor
+        schema:
+          type: integer
+        description: Um valor inteiro único que identifica este vendedor.
+        required: true
+      tags:
+      - vendedores
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Vendedor'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Vendedor'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Vendedor'
+        required: true
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Vendedor'
+          description: ''
+    patch:
+      operationId: vendedores_partial_update
+      summary: Editar vendedor (autenticado)
+      parameters:
+      - in: path
+        name: id_vendedor
+        schema:
+          type: integer
+        description: Um valor inteiro único que identifica este vendedor.
+        required: true
+      tags:
+      - vendedores
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedVendedor'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedVendedor'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedVendedor'
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Vendedor'
+          description: ''
+    delete:
+      operationId: vendedores_destroy
+      summary: Excluir vendedor (autenticado; 409 se tiver clientes)
+      parameters:
+      - in: path
+        name: id_vendedor
+        schema:
+          type: integer
+        description: Um valor inteiro único que identifica este vendedor.
+        required: true
+      tags:
+      - vendedores
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/vendedores/{id_vendedor}/clientes/:
+    get:
+      operationId: vendedores_clientes_list
+      summary: Listar clientes de um vendedor
+      parameters:
+      - in: path
+        name: id_vendedor
+        schema:
+          type: integer
+        description: Um valor inteiro único que identifica este vendedor.
+        required: true
+      - name: page
+        required: false
+        in: query
+        description: Um número de página dentro do conjunto de resultados paginado.
+        schema:
+          type: integer
+      tags:
+      - vendedores
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedClienteList'
+          description: ''
+components:
+  schemas:
+    AuthToken:
+      type: object
+      properties:
+        username:
+          type: string
+          writeOnly: true
+          title: Nome de usuário
+        password:
+          type: string
+          writeOnly: true
+          title: Senha
+        token:
+          type: string
+          readOnly: true
+      required:
+      - password
+      - token
+      - username
+    BairroResumo:
+      type: object
+      properties:
+        bairro_normalizado:
+          type: string
+        total:
+          type: integer
+      required:
+      - bairro_normalizado
+      - total
+    Cliente:
+      type: object
+      properties:
+        id_cliente:
+          type: string
+          description: 'Opcional na criação: se omitido, é gerado no padrão CLI0001.
+            Não pode ser alterado depois.'
+          maxLength: 20
+        razao_social:
+          type: string
+          maxLength: 200
+        cnpj_normalizado:
+          type: string
+          nullable: true
+          maxLength: 18
+        telefone_normalizado:
+          type: string
+          nullable: true
+          maxLength: 15
+        email:
+          nullable: true
+          oneOf:
+          - type: string
+            format: email
+            maxLength: 150
+          - type: string
+            maxLength: 0
+        bairro_normalizado:
+          type: string
+          nullable: true
+          maxLength: 100
+        cep_normalizado:
+          type: string
+          nullable: true
+          maxLength: 9
+        data_cadastro_normalizado:
+          type: string
+          format: date
+          nullable: true
+        vendedor_id:
+          type: integer
+      required:
+      - razao_social
+      - vendedor_id
+    PaginatedClienteList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Cliente'
+    PaginatedVendedorList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Vendedor'
+    PatchedCliente:
+      type: object
+      properties:
+        id_cliente:
+          type: string
+          description: 'Opcional na criação: se omitido, é gerado no padrão CLI0001.
+            Não pode ser alterado depois.'
+          maxLength: 20
+        razao_social:
+          type: string
+          maxLength: 200
+        cnpj_normalizado:
+          type: string
+          nullable: true
+          maxLength: 18
+        telefone_normalizado:
+          type: string
+          nullable: true
+          maxLength: 15
+        email:
+          nullable: true
+          oneOf:
+          - type: string
+            format: email
+            maxLength: 150
+          - type: string
+            maxLength: 0
+        bairro_normalizado:
+          type: string
+          nullable: true
+          maxLength: 100
+        cep_normalizado:
+          type: string
+          nullable: true
+          maxLength: 9
+        data_cadastro_normalizado:
+          type: string
+          format: date
+          nullable: true
+        vendedor_id:
+          type: integer
+    PatchedVendedor:
+      type: object
+      properties:
+        id_vendedor:
+          type: integer
+          readOnly: true
+        nome_vendedor:
+          type: string
+          maxLength: 100
+    Vendedor:
+      type: object
+      properties:
+        id_vendedor:
+          type: integer
+          readOnly: true
+        nome_vendedor:
+          type: string
+          maxLength: 100
+      required:
+      - id_vendedor
+      - nome_vendedor
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
+    tokenAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Token-based authentication with required prefix "Token"

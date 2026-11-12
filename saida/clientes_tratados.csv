@@ -1,0 +1,48 @@
+id_cliente;razao_social;cnpj_normalizado;telefone_normalizado;email;bairro_informado;bairro_normalizado;subdivisao;bairro_fonte;cep_normalizado;cep_status;data_cadastro_normalizado;vendedor__nome_vendedor;divergencia_cep_bairro;revisao_manual
+CLI0001;Mercadinho Boa Vista;84.959.310/3413-16;+5561970855700;contato@mercadinhobo.com.br;Sul (Águas Claras);Águas Claras;Sul;api_cep+informado;71926-750;ok;2022-06-21;Bruno Almeida;False;False
+CLI0002;Comercial São Judas;28.327.648/3503-05;+5561953862084;contato@comercialsão.com.br;Sul (Aguas Claras);Taguatinga;Norte;api_cep;72140-010;ok;2023-10-07;Camila Torres;True;False
+CLI0003;Armarinhos Silva & Cia;42.388.496/9653-28;+5561924891771;contato@armarinhossi.com.br;Taguatinga - DF;Taguatinga;Norte;api_cep+informado;72140-010;ok;2022-02-28;Camila Torres;False;False
+CLI0004;Empório Vale Verde;69.784.801/8451-46;+5561984331053;contato@empóriovalev.com.br;aguas claras;Águas Claras;Sul;api_cep+informado;71929-000;ok;2023-12-24;Diego Martins;False;False
+CLI0005;Mercearia Dois Irmãos;89.325.288/0957-01;+5561951273847;contato@merceariadoi.com.br;Taguatinga/DF;Taguatinga;;informado;;invalido;2022-01-08;Diego Martins;False;False
+CLI0006;Casa das Tintas Ipê;82.278.248/9638-34;+5561971188177;contato@casadastinta.com.br;Águas Claras;Águas Claras;;informado;;ausente;2021-08-17;Camila Torres;False;False
+CLI0007;Distribuidora Popular Centro-Oeste;83.930.103/1051-83;+5561999788677;contato@distribuidor.com.br;TAGUATINGA;Taguatinga;;informado;;ausente;2025-04-16;Camila Torres;False;False
+CLI0008;Bazar Estrela Dourada;31.165.667/0106-51;+5561941394116;contato@bazarestrela.com.br;V. Pires;Vicente Pires;;api_cep+informado;72006-400;ok;2022-08-18;Juliana Reis;False;False
+CLI0009;Supermercado Nova Aliança;10.801.326/7736-02;+5561910357396;contato@supermercado.com.br;Aguas claras;Águas Claras;Sul;api_cep+informado;71926-750;ok;2023-08-09;Juliana Reis;False;False
+CLI0010;Papelaria Horizonte;34.309.805/0097-88;+5561919319320;contato@papelariahor.com.br;Águas Claras/DF;Águas Claras;Areal;api_cep+informado;71950-000;ok;2021-03-03;Diego Martins;False;False
+CLI0011;Ferragens União;93.990.916/9985-43;+5561942035886;contato@ferragensuni.com.br;Vicente Pires;Vicente Pires;;api_cep+informado;72006-400;ok;2022-07-09;Bruno Almeida;False;False
+CLI0012;Mercado Cantinho do Sabor;79.911.838/4251-35;+5561931172421;contato@mercadocanti.com.br;Aguas Claras - DF;Águas Claras;Areal;api_cep+informado;71950-000;ok;2023-09-15;Diego Martins;False;False
+CLI0013;Loja Fatima Confecções;24.118.244/9353-48;+5561951141832;contato@lojafatimaco.com.br;guara - df;Guará;;informado;;ausente;2024-11-03;Bruno Almeida;False;False
+CLI0014;Depósito São Roque;27.868.011/2805-98;+5561980413088;contato@depósitosãor.com.br;Taguatinga;Taguatinga;;informado;;ausente;2023-05-02;Rafael Souza;False;False
+CLI0015;Comercial Rio Bonito;69.232.260/2563-42;+556134911634;contato@comercialrio.com.br;AGUAS CLARAS;Águas Claras;Sul;api_cep+informado;71926-750;ok;2022-08-28;Camila Torres;False;False
+CLI0016;Minimercado Vitória Régia;36.541.458/6850-14;+5561953491626;contato@minimercadov.com.br;Vicente Pires - DF;Vicente Pires;;api_cep+informado;72006-400;ok;2024-10-04;Bruno Almeida;False;False
+CLI0017;Casa de Carnes Ouro Fino;93.406.088/3561-59;+5561999038359;contato@casadecarnes.com.br;Vte Pires;Vicente Pires;;informado;72110-800;ok;2023-02-28;Diego Martins;False;False
+CLI0018;Armazém Planalto;82.366.299/4680-44;+5561980436279;contato@armazémplana.com.br;Vte Pires;Vicente Pires;;api_cep+informado;72006-530;ok;2024-08-15;Camila Torres;False;False
+CLI0019;Bazar Flor de Lis;48.951.343/3200-37;+556139702193;contato@bazarflordel.com.br;Guará II;Guará;II;informado;;ausente;2025-07-15;Camila Torres;False;False
+CLI0020;Mercado Bom Preço DF;20.163.287/0831-72;+5561997026198;contato@mercadobompr.com.br;Taguatinga - DF;Taguatinga;Norte;api_cep+informado;72130-010;ok;2025-08-25;Diego Martins;False;False
+CLI0021;Distribuidora Cerrado Norte;77.434.873/4714-34;+5561952910691;contato@distribuidor.com.br;taguatinga sul;Taguatinga;Sul;api_cep+informado;72140-010;ok;2022-02-18;Camila Torres;False;False
+CLI0022;Comercial Águas do Sul;66.587.603/6690-96;+5561910966763;contato@comercialágu.com.br;TAGUATINGA;Taguatinga;Norte;api_cep+informado;72110-010;ok;2024-07-10;Diego Martins;False;False
+CLI0023;Padaria Trigo Dourado;34.670.656/2729-80;+5561914442375;contato@padariatrigo.com.br;Taguatinga - DF;Taguatinga;Norte;api_cep+informado;72140-010;ok;2022-07-21;Juliana Reis;False;False
+CLI0024;Loja de Utilidades Girassol;37.556.464/1708-05;+5561921241659;contato@lojadeutilid.com.br;Sul (Águas Claras);Águas Claras;Sul;informado;;ausente;2022-01-25;Camila Torres;False;False
+CLI0025;Empório do Produtor;27.193.745/2991-24;+556136921420;contato@empóriodopro.com.br;Taguatinga/DF;Taguatinga;;informado;;ausente;2024-10-10;Juliana Reis;False;False
+CLI0026;Mercadinho Recanto Feliz;49.190.586/5185-06;+5561927298102;contato@mercadinhore.com.br;VICENTE PIRES;Vicente Pires;;informado;;ausente;2024-11-12;Camila Torres;False;False
+CLI0027;Casa da Limpeza Total;87.769.453/1473-79;+556137847209;contato@casadalimpez.com.br;Guará I;Guará;I;informado;;ausente;2024-01-11;Bruno Almeida;False;False
+CLI0028;Comercial Serra Azul;49.480.831/3678-37;+5561983421282;contato@comercialser.com.br;Aguas claras;Águas Claras;Norte;api_cep+informado;71900-100;ok;2022-05-03;Juliana Reis;False;False
+CLI0029;Armazém Fazendinha;85.685.574/4431-35;+556138609779;contato@armazémfazen.com.br;Águas Claras Sul;Águas Claras;Sul;informado;71900-000;ok;2022-12-25;Camila Torres;False;False
+CLI0030;Bazar Nova Esperança;34.352.408/2400-84;+5561990422680;contato@bazarnovaesp.com.br;Norte (Águas Claras);Águas Claras;Norte;api_cep+informado;71901-010;ok;2025-01-28;Bruno Almeida;False;False
+CLI0031;Distribuidora Vale do Alvorada;04.711.671/9022-94;+556133542940;contato@distribuidor.com.br;Guará I;Guará;I;informado;;ausente;2025-07-18;Diego Martins;False;False
+CLI0032;Mercearia Central DF;74.964.990/9133-41;+5561949293847;contato@merceariacen.com.br;aguas claras;Águas Claras;Areal;api_cep+informado;71950-000;ok;2022-02-18;Rafael Souza;False;False
+CLI0033;Loja Bom Retiro;03.447.134/9361-83;+5561953523330;contato@lojabomretir.com.br;Vicente Pires - DF;Vicente Pires;;informado;72110-800;ok;2022-01-03;Bruno Almeida;False;False
+CLI0034;Comercial Duas Palmeiras;17.464.887/7190-65;+556133561423;contato@comercialdua.com.br;Guará II;Guará;II;informado;;ausente;2025-04-03;Diego Martins;False;False
+CLI0035;Casa das Bebidas Real;02.787.429/6717-56;+5561953091709;contato@casadasbebid.com.br;Águas Claras;Águas Claras;Sul;api_cep+informado;71925-000;ok;2022-02-22;Bruno Almeida;False;False
+CLI0036;Mercadinho Nossa Senhora;07.154.516/8087-60;+5561994946927;contato@mercadinhono.com.br;taguatinga sul;Taguatinga;Sul;api_cep+informado;72130-010;ok;2024-08-20;Rafael Souza;False;False
+CLI0037;Armarinhos Ponto Certo;10.932.480/8613-17;+556137633522;contato@armarinhospo.com.br;Aguas claras;Águas Claras;Sul;api_cep+informado;71929-000;ok;2023-12-16;Diego Martins;False;False
+CLI0038;Empório Chão Vermelho;78.263.982/1465-84;+556133895891;contato@empóriochãov.com.br;Vte Pires;Vicente Pires;;api_cep+informado;72006-530;ok;2025-10-27;Juliana Reis;False;False
+CLI0039;Distribuidora Horizonte Azul;58.867.533/9636-05;+5561972467325;contato@distribuidor.com.br;aguas claras;Águas Claras;;informado;;invalido;2022-11-22;Juliana Reis;False;False
+CLI0040;Casa de Materiais Rocha;71.870.262/1745-96;+556139726383;contato@casademateri.com.br;Águas Claras;Águas Claras;;informado;;invalido;2025-11-28;Juliana Reis;False;False
+CLI0041;Mercado Popular Central;13.431.611/7240-05;+556134006873;contato@mercadopopul.com.br;Norte (Aguas Claras);Águas Claras;Norte;api_cep+informado;71901-010;ok;2022-07-12;Camila Torres;False;False
+CLI0042;Comercial Passo Firme;19.693.792/3747-40;+5561957129955;contato@comercialpas.com.br;Águas Claras Norte;Águas Claras;Norte;api_cep+informado;71906-500;ok;2024-02-06;Bruno Almeida;False;False
+CLI0043;Bazar Sol Nascente;43.671.369/5944-06;+5561911086890;contato@bazarsolnasc.com.br;Águas Claras Norte;Águas Claras;Norte;api_cep+informado;71901-010;ok;2021-11-19;Diego Martins;False;False
+CLI0044;Depósito Cerrado Sul;53.394.210/4709-52;+556134026352;contato@depósitocerr.com.br;Águas Claras/DF;Águas Claras;Norte;api_cep+informado;71900-100;ok;2022-07-24;Camila Torres;False;False
+CLI0045;Loja Multi Utilidades;47.451.712/3685-16;+556133709791;contato@lojamultiuti.com.br;Aguas claras;Águas Claras;Norte;api_cep+informado;71900-100;ok;2023-08-04;Bruno Almeida;False;False
+CLI0046;Armazém Boa Colheita;37.098.593/1746-12;+556131385986;contato@armazémboaco.com.br;Guará II;Guará;II;informado;;ausente;2021-02-16;Camila Torres;False;False
+CLI0047;Mercadinho Sem Endereço Completo;82.675.869/2617-96;+5561914391105;contato@semendereco.com.br;;;;nenhuma;;ausente;2022-06-23;Juliana Reis;False;False
