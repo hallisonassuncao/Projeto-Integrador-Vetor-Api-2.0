@@ -78,6 +78,59 @@ python manage.py rodar_etl --saida saida   # além do banco, exporta clientes e 
 
 # 6. Criar um usuário (admin e escrita na API)
 python manage.py createsuperuser
+
+# 6.1 Observação Importante
+
+Utilize os procedimentos abaixo caso ocorra um erro ao criar o usuário **admin** (necessário para acesso administrativo e gravação na API).
+
+## Exemplo de erro
+
+Se a seguinte mensagem for exibida:
+
+Usuário (leave blank to use 'halli'): admin
+
+Error: That username is already taken.
+
+Isso significa que o usuário **admin** já existe no banco de dados.
+
+## Verificando a senha do usuário existente
+
+Acesse o shell do Django:
+
+python manage.py shell
+
+Quando o prompt >>> for exibido, execute:
+
+from django.contrib.auth.models import User
+
+u = User.objects.get(username="admin")
+
+u.check\_password("projeto123")
+
+O resultado será:
+
+- True → a senha é projeto123;
+- False → a senha é diferente de projeto123.
+
+---
+
+# 6.2 Redefinir a senha do usuário admin
+
+Caso a senha não seja conhecida ou esteja incorreta, execute:
+
+python manage.py changepassword admin
+
+O Django solicitará:
+
+Changing password for user 'admin'
+
+Password:
+
+Password (again):
+
+Digite a nova senha e confirme\-a quando solicitado.
+
+Após a alteração, utilize a nova senha para acessar o painel administrativo e os recursos que dependem do usuário **admin**.
 ```
 
 O ETL é idempotente: pode ser reexecutado sem duplicar dados e não apaga clientes criados pela API.
