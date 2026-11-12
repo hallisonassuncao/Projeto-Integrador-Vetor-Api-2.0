@@ -303,5 +303,5 @@ docs/              MER + DER, documentação técnica do ETL, relatório de trad
 - Autores: Aleandreson, Hallison, Bruno Miranda e Cecília
 - Projeto: Desafio Primora
 - Área: Desenvolvimento de Software BackEnd - Python com Django
-- Instituição:Instituto Federal de Brasília (IFB)
+- Instituição: Instituto Federal de Brasília (IFB)
   
