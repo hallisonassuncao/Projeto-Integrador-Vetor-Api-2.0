@@ -139,6 +139,7 @@ python manage.py shell
 from django.contrib.auth.models import User
 print(list(User.objects.values('id', 'username', 'is_staff', 'is_superuser')))
 
+Se o retorno vier vazio ([]), não existe nenhum usuário cadastrado no banco.
 ```
 
 O ETL é idempotente: pode ser reexecutado sem duplicar dados e não apaga clientes criados pela API.
