@@ -1,4 +1,4 @@
-# Distribuidora Vetor — ETL + API REST (Desafio Primora)
+## 🏬 Distribuidora Vetor — ETL + API REST (Desafio Primora)
 
 Projeto do desafio Primora (Bolsa Futuro Digital), em duas partes:
 
