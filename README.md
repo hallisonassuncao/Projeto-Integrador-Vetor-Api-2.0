@@ -53,7 +53,7 @@ guardada em coluna própria) estão documentadas na documentação técnica, jun
 - Python 3.10 ou mais novo (Django 6 exige 3.12+; em versões anteriores o pip instala o Django 5.2)
 - PostgreSQL (opcional: sem configuração, o projeto usa SQLite, no arquivo `vetor.db`)
 
-## Instalação
+## 🛠 Instalação
 
 ```bash
 # 1. Criar e ativar o ambiente virtual
