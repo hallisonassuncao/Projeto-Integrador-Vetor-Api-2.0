@@ -131,6 +131,12 @@ Password (again):
 Digite a nova senha e confirme\-a quando solicitado.
 
 Após a alteração, utilize a nova senha para acessar o painel administrativo e os recursos que dependem do usuário **admin**.
+
+==> Você também pode verificar todos os usuários cadastrados:
+
+from django.contrib.auth.models import User
+print(list(User.objects.values('id', 'username', 'is_staff', 'is_superuser')))
+
 ```
 
 O ETL é idempotente: pode ser reexecutado sem duplicar dados e não apaga clientes criados pela API.
