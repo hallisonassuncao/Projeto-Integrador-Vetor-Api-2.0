@@ -16,6 +16,8 @@ aside{background:var(--ink);color:#E8EEF1;padding:28px 18px;display:flex;flex-di
 .brand i{width:30px;height:30px;background:var(--acc);clip-path:polygon(0 100%,50% 0,100% 100%,50% 70%)}
 nav button{all:unset;display:block;width:100%;padding:10px 12px;border-radius:8px;cursor:pointer;color:#B9C7CE}
 nav button:hover{background:#1B3640;color:#fff}nav button[aria-current=page]{background:#fff;color:var(--ink);font-weight:600}
+.docs{display:grid;gap:2px;margin-top:18px;padding:0 12px}.docs b{font-size:12px;color:#8FA3AC;margin-bottom:4px}
+.docs a{color:#B9C7CE;text-decoration:none;padding:5px 0}.docs a:hover{color:#fff;text-decoration:underline}
 .who{margin-top:auto;padding:12px;border-radius:10px;background:#1B3640;font-size:13px;color:#B9C7CE}
 .who b{display:block;color:#fff;font-size:14px;margin-bottom:8px}
 .btn{border:1px solid var(--line);background:var(--paper);padding:8px 14px;border-radius:8px;cursor:pointer;font-weight:600}
@@ -57,21 +59,61 @@ dialog h2{margin:0 0 16px}
 #toast{position:fixed;right:22px;bottom:22px;display:grid;gap:8px;z-index:9}
 #toast div{background:var(--ink);color:#fff;padding:12px 16px;border-radius:10px;max-width:380px;box-shadow:0 8px 24px #0004}
 #toast .e{background:var(--bad)}
-@media(max-width:820px){body{display:block}aside{position:static;height:auto;flex-direction:row;flex-wrap:wrap;padding:14px;align-items:center}.brand{padding:0 8px 0 0}.who{margin:0 0 0 auto;padding:6px 10px}.who b{display:none}main{padding:22px 16px}h1{font-size:30px}.f{grid-template-columns:1fr}.bar{grid-template-columns:110px 1fr 28px}}
+@media(max-width:820px){.docs{display:none}body{display:block}aside{position:static;height:auto;flex-direction:row;flex-wrap:wrap;padding:14px;align-items:center}.brand{padding:0 8px 0 0}.who{margin:0 0 0 auto;padding:6px 10px}.who b{display:none}main{padding:22px 16px}h1{font-size:30px}.f{grid-template-columns:1fr}.bar{grid-template-columns:110px 1fr 28px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ===== Brasília ao entardecer ===== */
+body{display:block;background:#F4F6FA}
+.sky{background:linear-gradient(180deg,#0A1A40 0%,#1B3A9C 55%,#F29B54 100%)}.sky.mini{background:#0A1A40}
+header{display:flex;align-items:center;gap:28px;padding:18px 48px}
+.brand{color:#fff;padding:0}.brand i{background:#FFD08A}
+nav{display:flex;gap:6px;margin-right:auto}
+nav button{all:unset;padding:8px 18px;border-radius:999px;color:#C9D6F5;cursor:pointer;font-weight:600}
+nav button:hover{background:#ffffff26;color:#fff}nav button[aria-current=page]{background:#fff;color:#0A1A40}
+.who{display:flex;align-items:center;gap:12px;margin:0;padding:0;background:none}.who b{display:inline;margin:0;color:#C9D6F5;font-weight:500}
+.who .btn{width:auto;background:#fff;border-color:#fff}
+.hero{display:grid;grid-template-columns:minmax(260px,400px) 1fr;gap:44px;align-items:end;padding:26px 48px 0;position:relative;border-bottom:7px solid #08142F}
+.hero::before{content:"";position:absolute;right:11%;top:22px;width:92px;height:92px;border-radius:50%;background:radial-gradient(circle,#FFE7B8 0,#FFD08A 55%,#FFD08A00 72%)}
+.hero .txt{align-self:center;padding-bottom:34px;position:relative}
+.hero h1{color:#fff;font-size:42px;line-height:1.08}.hero h1 .n{display:block;font-size:104px;line-height:.92;color:#FFD08A}
+.hero p{color:#C9D6F5;margin-top:14px;max-width:34ch}
+.city{display:flex;align-items:flex-end;gap:6px;height:270px;position:relative}
+.tower{all:unset;box-sizing:border-box;cursor:pointer;height:var(--h);min-height:104px;min-width:112px;overflow:hidden;background-color:var(--c);
+ background-image:repeating-linear-gradient(0deg,transparent 0 11px,#0A1A4059 11px 14px),repeating-linear-gradient(90deg,transparent 0 13px,#0A1A4059 13px 16px);
+ border-radius:7px 7px 0 0;padding:12px;display:flex;flex-direction:column;gap:6px;align-items:flex-start;transition:transform .25s,filter .25s;box-shadow:inset 0 3px 0 #ffffff40}
+.tower:hover{transform:translateY(-8px);filter:brightness(1.12)}
+.tower b,.tower span{white-space:nowrap;background:#0A1A40D9;color:#fff;border-radius:6px;padding:2px 9px}
+.tower b{font:700 28px Georgia,serif}.tower span{font-size:13px;font-weight:600}
+.tower.sem{background-color:#7E8FA6;cursor:default}.tower.sem:hover{transform:none;filter:none}
+main{max-width:1180px;margin:0 auto;padding:40px 48px 18px}
+main h1{font-size:38px}main h2{font-size:24px;margin:6px 0 14px}
+.bars{max-width:none;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:12px 40px}
+.bar{padding:12px 16px;background:#fff;border-radius:12px;border:1px solid var(--line);grid-template-columns:130px 1fr 30px}
+.bar:hover{border-color:var(--acc);box-shadow:0 6px 20px #2347F522}.bar span:nth-child(2) i{background:linear-gradient(90deg,#1B3A9C,#2347F5)}
+.tbl{box-shadow:0 10px 30px #10242B14;border:0}th{background:#F4F6FA}
+tbody tr:hover{background:#EEF2FF}
+.vrow{border:0;box-shadow:0 6px 18px #10242B12}
+footer{max-width:1180px;margin:0 auto;padding:10px 48px 44px;display:flex;flex-wrap:wrap;gap:8px 24px;color:var(--mut);font-size:14px}
+footer a{color:var(--acc);font-weight:600;text-decoration:none}footer a:hover{text-decoration:underline}
+@media(max-width:820px){header{flex-wrap:wrap;gap:12px;padding:14px 16px}nav{order:3;width:100%}.hero{grid-template-columns:minmax(0,1fr);padding:12px 16px 0;gap:6px}.hero::before{right:6%;top:10px;width:64px;height:64px}
+ .hero h1{font-size:30px}.hero h1 .n{font-size:68px}.hero .txt{padding-bottom:12px}.city{height:210px}.tower{min-width:48px;padding:6px 3px;gap:4px}.tower span{white-space:normal;font-size:9px;padding:1px 3px;letter-spacing:-.2px}.tower b{font-size:20px;padding:0 6px}main,footer{padding-left:16px;padding-right:16px}}
 </style>
 </head>
 <body>
-<aside>
-  <div class="brand"><i></i>Vetor</div>
-  <nav aria-label="Principal">
-    <button data-tab="painel">Painel</button>
-    <button data-tab="clientes">Clientes</button>
-    <button data-tab="vendedores">Vendedores</button>
-  </nav>
-  <div class="who" id="who"></div>
-</aside>
+<div id="sky" class="sky">
+  <header>
+    <div class="brand"><i></i>Vetor</div>
+    <nav aria-label="Principal">
+      <button data-tab="painel">Painel</button>
+      <button data-tab="clientes">Clientes</button>
+      <button data-tab="vendedores">Vendedores</button>
+    </nav>
+    <div class="who" id="who"></div>
+  </header>
+  <div id="hero"></div>
+</div>
 <main id="view" aria-live="polite"></main>
+<footer><span>Documentação:</span><a href="/api/docs/" target="_blank" rel="noopener">API (Redoc)</a><a href="/api/swagger/" target="_blank" rel="noopener">API (Swagger)</a><a href="/api/schema/" target="_blank" rel="noopener">Schema OpenAPI</a><a href="/admin/" target="_blank" rel="noopener">Admin</a></footer>
 <dialog id="dlg"></dialog>
 <div id="toast" role="status"></div>
 <script>
@@ -94,14 +136,16 @@ async function filtrar(){
 function quem(){$('#who').innerHTML=T?`<b>Edição liberada</b><button class="btn" data-act="sair">Sair</button>`:`<b>Somente leitura</b><button class="btn" data-act="entrar">Entrar para editar</button>`}
 function render(){
  document.querySelectorAll('nav button').forEach(b=>b.dataset.tab==S.tab?b.setAttribute('aria-current','page'):b.removeAttribute('aria-current'));
+ $('#sky').classList.toggle('mini',S.tab!='painel');$('#hero').innerHTML=S.tab=='painel'?hero():'';
  $('#view').innerHTML=({painel,clientes,vendedores})[S.tab]()}
+function hero(){
+ const n=S.all.length,com=S.bb.reduce((a,x)=>a+x.total,0),sem=n-com,mx=Math.max(1,...S.bb.map(x=>x.total));
+ const torres=S.bb.map(x=>`<button class="tower" data-act="bairro" data-v="${E(x.bairro_normalizado)}" style="--h:${30+70*x.total/mx}%;--c:${cor(x.bairro_normalizado)};flex:${x.total}" aria-label="${E(x.bairro_normalizado)}: ${x.total} clientes"><b>${x.total}</b><span>${E(x.bairro_normalizado)}</span></button>`).join('')+(sem?`<span class="tower sem" style="--h:30%;flex:${sem}" title="Sem bairro"><b>${sem}</b><span>sem bairro</span></span>`:'');
+ return `<div class="hero"><div class="txt"><h1><span class="n">${n}</span>clientes em ${S.bb.length} bairros</h1><p>Cada prédio é um bairro já normalizado: quanto mais clientes, mais alto. Toque num deles para ver a lista.</p></div><div class="city">${torres}</div></div>`}
 function painel(){
- const n=S.all.length,com=S.bb.reduce((a,x)=>a+x.total,0),sem=n-com,mx=Math.max(1,...S.vd.map(v=>S.all.filter(c=>c.vendedor_id==v.id_vendedor).length));
- const seg=S.bb.map(x=>`<button class="seg" data-act="bairro" data-v="${E(x.bairro_normalizado)}" style="flex:${x.total};background:${cor(x.bairro_normalizado)};color:${tx(x.bairro_normalizado)}" aria-label="${E(x.bairro_normalizado)}: ${x.total} clientes">${x.total}</button>`).join('')+(sem?`<span class="seg" style="flex:${sem};background:#9AA7B0;color:#10242B;cursor:default" title="Sem bairro">${sem}</span>`:'');
- const leg=S.bb.map(x=>`<button data-act="bairro" data-v="${E(x.bairro_normalizado)}"><span class="dot" style="background:${cor(x.bairro_normalizado)}"></span>${E(x.bairro_normalizado)} <b>${x.total}</b></button>`).join('');
+ const mx=Math.max(1,...S.vd.map(v=>S.all.filter(c=>c.vendedor_id==v.id_vendedor).length));
  const bars=S.vd.map(v=>{const c=S.all.filter(x=>x.vendedor_id==v.id_vendedor).length;return `<button class="bar" data-act="vend" data-v="${v.id_vendedor}"><span>${E(v.nome_vendedor)}</span><span><i style="width:${c/mx*100}%"></i></span><b class="num">${c}</b></button>`}).join('');
- return `<h1>${n} clientes em <em>${S.bb.length} bairros</em></h1><p class="sub">Cada bloco é um bairro já normalizado: as grafias digitadas no cadastro foram reunidas num só nome. Toque num bairro para ver os clientes dele.</p>
- <div class="strip">${seg}</div><div class="leg">${leg}</div><h2>Clientes por vendedor</h2><div class="bars">${bars}</div>`}
+ return `<h2>Clientes por vendedor</h2><div class="bars">${bars}</div>`}
 function clientes(){
  const q=S.q.toLowerCase(),L=S.cl.filter(c=>!q||[c.id_cliente,c.razao_social,c.cnpj_normalizado,c.email].join(' ').toLowerCase().includes(q));
  const rows=L.map(c=>`<tr data-act="ver" data-v="${E(c.id_cliente)}"><td class="num"><small>${E(c.id_cliente)}</small></td><td><b>${E(c.razao_social)}</b></td><td>${c.bairro_normalizado?`<span class="dot" style="background:${cor(c.bairro_normalizado)}"></span> ${E(c.bairro_normalizado)}`:'<small>sem bairro</small>'}</td><td>${E(vnome(c.vendedor_id))}</td><td class="num">${E(c.cnpj_normalizado||'-')}</td><td class="num">${E(c.telefone_normalizado||'-')}</td></tr>`).join('');
