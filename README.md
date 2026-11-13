@@ -134,6 +134,8 @@ Após a alteração, utilize a nova senha para acessar o painel administrativo e
 
 ==> Você também pode verificar todos os usuários cadastrados:
 
+python manage.py shell
+
 from django.contrib.auth.models import User
 print(list(User.objects.values('id', 'username', 'is_staff', 'is_superuser')))
 
