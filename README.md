@@ -266,9 +266,16 @@ Invoke-RestMethod -Method Post -Uri http://127.0.0.1:8000/api/clientes/ -Headers
 
 ```bash
 # curl  ==> No PowerShell
-curl -X POST http://127.0.0.1:8000/api/auth/token/ -H "Content-Type: application/json" \
-     -d '{"username":"admin","password":"SUA_SENHA"}'
-curl -H "Authorization: Token <token>" http://127.0.0.1:8000/api/clientes/
+$body = @{
+    username = "admin"
+    password = "SUA_SENHA"
+} | ConvertTo-Json
+
+Invoke-RestMethod `
+    -Uri "http://127.0.0.1:8000/api/auth/token/" `
+    -Method Post `
+    -ContentType "application/json" `
+    -Body $body
 ```
 
 Na criação e edição, CNPJ, telefone, CEP e bairro passam pelas mesmas normalizações do ETL
